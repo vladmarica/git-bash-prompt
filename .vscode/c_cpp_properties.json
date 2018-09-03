@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Cygwin",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Cygwin/usr/include/**",
+                "C:/Cygwin/lib/gcc/x86_64-pc-cygwin/7.3.0/include/**",
+                "C:/Cygwin/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin",
+                "C:/Cygwin/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
