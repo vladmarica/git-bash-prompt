@@ -16,11 +16,17 @@
 #define STATUS_AHEAD        "\xe2\x86\x91" // ↑
 #define STATUS_BEHIND       "\xe2\x86\x93" // ↓
 
-#define COLOR_RESET         "\e[0m"
-#define COLOR_RED           "\e[31m"
-#define COLOR_GREEN         "\e[32m"
-#define COLOR_YELLOW        "\e[33m"
-#define COLOR_BLUE          "\e[34m"
+// Printable color sequences.
+// \001 is \[ - the start a of non-printable sequence
+// \x1b is \e - start of an escape sequence
+// \002 is \] - the end of a non-printable sequence
+// See https://stackoverflow.com/a/24840720 for more details
+
+#define COLOR_RESET         "\001\x1b[0m\002"
+#define COLOR_RED           "\001\x1b[31m\002"
+#define COLOR_GREEN         "\001\x1b[32m\002"
+#define COLOR_YELLOW        "\001\x1b[33m\002"
+#define COLOR_BLUE          "\001\x1b[34m\002"
 
 typedef struct {
     std::string branch_name;
@@ -137,7 +143,7 @@ int main(void) {
 
         line_num++;
     }
-    
+
     if (WEXITSTATUS(pclose(fp)) != 0) {
         return 1;
     }
