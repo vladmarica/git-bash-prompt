@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define GIT_STATUS_COMMAND  "git status --porcelain=v1 -b"
+#define GIT_STATUS_COMMAND  "git status --porcelain=v1 -b 2>&1"
 #define PREFIX_NO_COMMITS   "## No commits yet on "
 
 #define STATUS_EQUAL        "\xe2\x89\xa1" // ≡
@@ -137,8 +137,10 @@ int main(void) {
 
         line_num++;
     }
-
-    fclose(fp);
+    
+    if (WEXITSTATUS(pclose(fp)) != 0) {
+        return 1;
+    }
 
     // Print out the prompt
     printf(COLOR_YELLOW "[" COLOR_BLUE "%s", status.branch_name.c_str());
