@@ -122,7 +122,7 @@ int main(void) {
 
     size_t line_length = 256;
     std::string line(line_length, 0);
-    char* line_data_ptr = line.data();
+    char* line_data_ptr = const_cast<char*>(line.data()); // probably a dangerous cast, but it works :D
 
     ssize_t chars_read = 0;
     int line_num = 0;
@@ -169,7 +169,7 @@ int main(void) {
         printf(COLOR_RED " +%d ~%d -%d", status.working_added_files, status.working_modified_files, status.working_removed_files);
     }
 
-    printf(COLOR_YELLOW "]" COLOR_RESET);
+    printf(COLOR_YELLOW "] " COLOR_RESET);
     
     return 0;
 }
