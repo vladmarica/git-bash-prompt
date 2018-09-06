@@ -2,6 +2,7 @@
  A fast and simple Git prompt for Bash, inspired by [posh-git](https://github.com/dahlbyk/posh-git).
 
 Here's an example of what it could look like:
+
 ![](https://i.imgur.com/IdDueCK.png)
 
 I make no guarentees as to how well it performs or if it will accurately display the current Git status. It has no indication of detached HEADs, merge conflicts, or any of that fancy stuff.
