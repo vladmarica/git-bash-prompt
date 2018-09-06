@@ -10,7 +10,7 @@ I make no guarentees as to how well it performs or if it will accurately display
 Tested on Cygwin (MinTTY) on Windows 7 and on Debian 9.
 
 ### Requirements
-- GCC 6 or highter _(this can be changed to Clang if you modify the Makefile)_
+- GCC 4.8 or higher _(this can be changed to Clang if you modify the Makefile)_
 - GNU Make
 - A terminal emulator that supports Unicode
 
